@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% block now %}
+    用户修改
+{% endblock %}
+{% block path %}
+    <li><a href="/B/">首页</a></li>
+    <li class="active">用户修改</li>
+{% endblock %}
+{% block content %}
+    <form action="/B/update_user/" method="post">
+        <table class="table table-bordered" style="text-align: center;width: 50%;margin: auto">
+            <tr>
+                <td style="background: #9acfea;color: white;width: 30%">账号:</td>
+                <td>{{ username }}</td>
+            </tr>     
+            <tr>
+                <td style="background: #9acfea;color: white;width: 30%">旧密码:</td>
+                <td><input type="text" name="old_pwd" placeholder="请输入旧密码"></td>
+            </tr>      
+            <tr>
+                <td style="background: #9acfea;color: white;width: 30%">新密码:</td>
+                <td><input type="password" name="new_pwd" placeholder="请输入新密码"></td>
+            </tr>      
+            <tr>
+                <td style="background: #9acfea;color: white;width: 30%">确认新密码:</td>
+                <td><input type="password" name="new_y_pwd" placeholder="请重新输入新密码"></td>
+            </tr>
+            <tr>
+                <td style="background: #9acfea;color: white;width: 30%"></td>
+                <td><input type="submit" value="提交" title="如果修改成功你将要重新登录" style="float: left"><span style="color: red;font-size: 14px">{{ messge }}</span></td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

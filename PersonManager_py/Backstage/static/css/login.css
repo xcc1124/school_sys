@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+td{
+    min-width: 100px;
+}
+#public_key,#password_not_look{
+    display: none;
+}
+.all{
+    position: fixed;
+    height: 600px;
+    width: 800px;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -400px;
+    background: url("../img/timg.gif");
+    background-size: 100% 100%;
+}
+.form-input{
+    position: fixed;
+    height: 200px;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -100px;
+    font-size: 20px;
+    background:rgba(100,100,100,0.5);
+    color: aqua;
+}
+.form-input .messge{
+    font-size: 15px;
+    color: red;
+}
+.form-input label{
+    float: right;
+}
+.form-input input[type=text],input[type=password]{
+    height: 25px;
+    width: 130px;
+}
+.form-input input[type=submit],input[type=reset]{
+    height: 25px;
+    width: 40px;
+    float: right;
+    cursor: pointer;
+}
+#yz_Code{
+    margin-top: 3px;
+    margin-left: 10px;
+    display: block;
+    cursor: pointer;
+}
+#Code{
+    color:red;
+}
+#pwd_messge{
+    color: red;
+    font-size: 13px;
+}

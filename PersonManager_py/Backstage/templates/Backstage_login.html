@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>湘南企业后台管理系统</title>
+    <link rel="icon" href="/static/img/logo.png"/>
+    <link rel="stylesheet" href="/static/css/login.css" type="text/css">
+</head>
+<body>
+    <section class="all">
+        <form method="post" action="/B/login.this/">
+            <table class="form-input">
+                <tbody>
+                    <tr>
+                        <td><label for="id_username">用户名:</label></td>
+                        <td>{{ obj.username }}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">密 码:</label></td>
+                        <td>
+                            {{ obj.pa }}
+                            <input type="password" id="password_not_look" name="password">
+                        </td>
+                        <td><span id="pwd_messge">{{ pwd_messge }}</span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Code">验证码:</label></td>
+                        <td><input id="Code" type="text" name="Code" placeholder="请输入验证码" value='{{ messge }}'/></td>
+                        <td><img id="yz_Code" src="/B/CAPTCHA/" height="30px" width="100px" title="点击刷新"/></td>
+                    </tr>
+                    <tr>
+                        <td><input class="tj" type="submit" value="确定"/></td>
+                        <td><input type="reset" value="重置"/></td>
+                        <td><span id="public_key">{{ public_key }}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </section>
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/js/jsencrypt.min.js"></script>
+<script src="/static/js/login.js"></script>
+</body>
+</html>

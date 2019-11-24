@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/img/logo.png">
+
+    <title>湘南企业后台管理系统</title>
+    <link href="/static/css/index.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/navbar-fixed-top.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="/static/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/static/js/ie-emulation-modes-warning.js"></script>
+
+  </head>
+
+  <body style="min-height: 700px!important;">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Perfect Sys</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+          <ul class="nav navbar-nav">
+              <li class="active"><a href="#">首页</a></li>
+              <li><a href="#">部门管理</a></li>
+              <li><a href="#">员工管理</a></li>
+              <li><a href="#">招聘管理</a></li>
+              <li><a href="#">薪资管理</a></li>
+              <li><a href="#">奖惩管理</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">系统管理 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a href="/B/update_user/">用户修改</a></li>
+                  <li><a href="/B/">返回首页</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Safe</li>
+                  <li><a href="B/log_out/">安全退出</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+              <li><a style="color: #5bc0de" class="time">time</a></li>
+              <li><a style="color: pink">欢迎你！{{ username }}</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron" style="text-align: center">
+            <address>
+                <strong>公司地址:</strong><br>
+                <a>湖南省郴州市苏仙区</a><br>
+                <a>湘南学院</a><br>
+            </address>
+            <address>
+               <strong>邮箱</strong><br>
+               <a>2398506993@qq.com</a>
+             </address>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading"><div class="glyphicon glyphicon-home"></div>{% block now %} 首页面{% endblock %}</div>
+            <ol class="breadcrumb">当前路径:
+{#              <li><a href="#">Home</a></li>#}
+{#              <li><a href="#">Library</a></li>#}
+                {% block path %}<li class="active">首页</li>{% endblock %}
+            </ol>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    {% block content %}
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><div class="glyphicon glyphicon-hand-right" style="height: 50px;width: 50px"></div><button type="button" class="btn btn-info">添加员工信息</button></td>
+                                <td><div class="glyphicon glyphicon-hand-right" style="height: 50px;width: 50px"></div><button type="button" class="btn btn-info">制定培训计划</button></td>
+                            </tr>
+                            <tr>
+                                <td><div class="glyphicon glyphicon-hand-right" style="height: 50px;width: 50px"></div><button type="button" class="btn btn-info">添加应聘信息</button></td>
+                                <td><div class="glyphicon glyphicon-hand-right" style="height: 50px;width: 50px"></div><button type="button" class="btn btn-info">制定奖惩制度</button></td>
+                            </tr>
+                            <tr>
+                                <td><div class="glyphicon glyphicon-hand-right" style="height: 50px;width: 50px"></div><button type="button" class="btn btn-info">添加部门信息</button></td>
+                                <td><div class="glyphicon glyphicon-hand-right" style="height: 50px;width: 50px"></div><button type="button" class="btn btn-info">制定薪资信息</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-info" style="text-align: center">
+            <div class="foot-2">
+                <a class="foot-3"><img src="/static/img/footer1.gif">旗下站点 ©2019cc.com</a>
+                <a href="javascript:void(0)">京ICP备******</a>
+                <a href="javascript:void(0)">京公网安备 ******</a>
+            </div>
+            <div class="foot-3"><a>版权所有：湘南企业所有</a></div>
+        </div>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/js/jquery.min.js"><\/script>')</script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/static/js/index.js"></script>
+  
+
+</body></html>
